@@ -1,3 +1,9 @@
+# NPDP-GUI specifics
+secrets.env
+
+
+
+
 # Logs
 logs
 *.log
