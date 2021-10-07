@@ -1,1 +1,1 @@
-# NPDP-GUI
+# PowerHour
