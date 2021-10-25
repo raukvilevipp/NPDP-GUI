@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    #env_file:
-      #- secrets.env
+    env_file:
+      - secrets.env
     ports:
       - 3000:3000

@@ -4,8 +4,8 @@ FROM node:16
 WORKDIR /usr/src/app
 
 # Install dependencies
-#COPY package*.json ./
-#RUN npm install
+COPY package*.json ./
+RUN npm install
 
 # Copy the source code
 COPY ./src .
@@ -14,4 +14,4 @@ COPY ./src .
 EXPOSE 3000
 
 # Run it
-CMD [ "node", "app.js"]
+CMD [ "npm", "start"]
