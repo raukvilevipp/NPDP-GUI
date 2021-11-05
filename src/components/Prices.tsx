@@ -1,4 +1,5 @@
 import dateFormat from 'dateformat'
+import React from 'react'
 import { useEffect } from 'react'
 const now = new Date()
 
@@ -17,17 +18,19 @@ const url =
     token
 
 const Prices = () => {
+    const [response, setResponse] = React.useState('')
+
     useEffect(() => {
         fetch(url) // { mode: "no-cors" })
             .then(response => response.text())
-            .then(data => console.log(data))
+            .then(data => setResponse(data))
             .catch((error) => {
                 console.log(error);
             })
 
     }, [])
 
-    return <p>Hei, {url}</p>
+    return <p>Hei, {response}</p>
 }
 
 export default Prices
