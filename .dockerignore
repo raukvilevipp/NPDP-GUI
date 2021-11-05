@@ -1,0 +1,11 @@
+# Project files that don't need to be in image
+Dockerfile
+.dockerignore
+.gitignore
+README.md
+.vscode
+secrets.env
+secrets_template.env
+
+# Will get generated as part of build
+node_modules

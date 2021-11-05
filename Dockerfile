@@ -8,10 +8,10 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the source code
-COPY ./src .
+COPY . .
 
 # Expose port
 EXPOSE 3000
 
 # Run it
-CMD [ "npm", "start"]
+CMD [ "yarn", "start"]
