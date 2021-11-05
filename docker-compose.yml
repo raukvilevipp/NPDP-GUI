@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - secrets.env
+      - .env
     ports:
       - 3000:3000

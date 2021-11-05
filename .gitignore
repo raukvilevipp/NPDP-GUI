@@ -1,5 +1,5 @@
-# PowerHour specifics
-secrets.env
+# Environment variables
+.env
 
 
 
