@@ -1,12 +1,33 @@
-import dateFormat, { masks } from "dateformat";
-const now = new Date();
+import dateFormat from 'dateformat'
+import { useEffect } from 'react'
+const now = new Date()
 
-const entsoeTimeFormat = "yyyyMMddHH00";
+const entsoeTimeFormat = 'yyyymmddHH00'
 
-const start = dateFormat(now, entsoeTimeFormat);
-const end = dateFormat(now.setHours(now.getHours() + 12), entsoeTimeFormat);
+const start = dateFormat(now, entsoeTimeFormat)
+const end = dateFormat(now.setHours(now.getHours() + 12), entsoeTimeFormat)
 
 const token = process.env.ENTSOE_TOKEN;
-const Url = "https://transparency.entsoe.eu/api?documentType=A44&in_Domain=10YNO-1--------2&out_Domain=10YNO-1--------2&periodStart="+start+"&periodEnd="+end+"&securityToken="+token
+const url =
+    'https://transparency.entsoe.eu/api?documentType=A44&in_Domain=10YNO-1--------2&out_Domain=10YNO-1--------2&periodStart=' +
+    start +
+    '&periodEnd=' +
+    end +
+    '&securityToken=' +
+    token
 
-export default Url
+const Prices = () => {
+    useEffect(() => {
+        fetch(url) // { mode: "no-cors" })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch((error) => {
+                console.log(error);
+            })
+
+    }, [])
+
+    return <p>Hei, {url}</p>
+}
+
+export default Prices
